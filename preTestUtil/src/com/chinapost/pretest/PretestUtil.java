@@ -26,7 +26,7 @@ public class PretestUtil {
 					downLoadAPK();					
 				}
 				if(args[i].endsWith("--startnox")){
-					startNox();
+					startNox(args[i+1]);
 					Thread.sleep(120000);
 				}
 				if(args[i].endsWith("--stopnox")){
@@ -43,8 +43,8 @@ public class PretestUtil {
 		}
 	}
 
-	private static void startNox() throws IOException {
-		Runtime.getRuntime().exec("E:\\Users\\kk\\AppData\\Roaming\\Nox\\bin\\Nox.exe");	
+	private static void startNox(String path) throws IOException {
+		Runtime.getRuntime().exec(path);	
 	}
 
 	private static void stopNox() throws IOException {
